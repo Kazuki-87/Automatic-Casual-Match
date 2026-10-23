@@ -94,6 +94,15 @@ class Auto_AI_Buttle_victory(ImageProcPythonCommand):
                         print("マッチング成功")
                         self.press(Button.A, wait=3)
                         state = 2
+                    elif (self.isContainTemplate('Inazuma_ElevenV/casualMatch.png', threshold=0.7, use_gray=True, show_value=False)):
+                        print("カジュアルマッチ画面")
+                        self.press(Hat.BTM, 0.1, 0.5)
+                        self.wait(1)
+                        self.press(Button.A, wait=5)
+                        self.press(Hat.BTM, 0.1, 0.5)
+                        self.press(Hat.BTM, 0.1, 0.5)
+                        self.press(Hat.BTM, 0.1, 0.5)
+                        state = 0
                     else:
                         self.wait(3)
                 # キックオフ手前
